@@ -47,27 +47,6 @@ EchoNotes is a voice-first productivity and knowledge management application bui
 ---
 
 ## 🛠️ Tech Stack & Architecture
-
-```mermaid
-graph TD
-    UI["Flutter UI (Material 3 / Cosmic Studio)"]
-    Intent["Android Share Receiver (ACTION_SEND)"]
-    Auth["Firebase Auth (Google & Email)"]
-    DB["Cloud Firestore"]
-    Storage["Supabase Storage"]
-    STT["AssemblyAI API"]
-    AI["Firebase AI Logic (Gemini 3.5 / 3.8)"]
-    AppCheck["Firebase App Check"]
-
-    Intent --> UI
-    UI --> Auth
-    UI --> DB
-    UI --> Storage
-    UI --> STT
-    UI --> AI
-    AppCheck -.-> AI
-```
-
 - **Frontend**: Flutter 3.x / Dart 3.x
 - **UI Architecture**: Layered Feature-First Architecture (`lib/features/*`) with custom themes, responsive breakpoints, and micro-interactions
 - **Backend & Cloud**:
