@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "427859853635",
+    "project_id": "echonotes-5667a",
+    "storage_bucket": "echonotes-5667a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427859853635:android:33e5fefe901628cd05eff6",
+        "android_client_info": {
+          "package_name": "com.example.echonotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "427859853635-utjrfntdnljdofmsjntm3ri4o429150r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.echonotes",
+            "certificate_hash": "745da4ba0ae963f4227fa7c7f45e01a86b67d1c0"
+          }
+        },
+        {
+          "client_id": "427859853635-mjp0fduqssisfkjks8tgectgs7ush1a9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlnKIoyG0Rh78YdVMmQ1XPrhlmLhA2rEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "427859853635-mjp0fduqssisfkjks8tgectgs7ush1a9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "427859853635-gu9r1a21nm11nva1e19c96jep8rkq1o9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.echonotes"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,57 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions for auth verification
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    // User profile documents
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+
+      // Phase 8 Collection AI Conversations
+      // Users can view and delete their own conversations
+      match /conversations/{conversationId} {
+        allow read, delete: if isOwner(userId);
+        // Authoritative creation/updates handled by Cloud Functions
+        allow create, update: if false;
+
+        // Messages under conversations
+        match /messages/{messageId} {
+          allow read: if isOwner(userId);
+          // Authoritative messages & verified citations created only by backend Cloud Function
+          allow create, update, delete: if false;
+        }
+      }
+
+      // Phase 8 Usage Counters
+      // Client can inspect remaining quota, but cannot manipulate usage records
+      match /usage/{metricId} {
+        allow read: if isOwner(userId);
+        allow write: if false;
+      }
+    }
+
+    // Notes collection
+    // Ownership is strictly enforced by userId on both create, read, update, delete
+    match /notes/{noteId} {
+      allow read: if isSignedIn() && resource.data.userId == request.auth.uid;
+      allow create: if isSignedIn() && request.resource.data.userId == request.auth.uid;
+      allow update, delete: if isSignedIn() && resource.data.userId == request.auth.uid;
+    }
+
+    // Collections (Phase 7)
+    // User-owned collections for grouping notes
+    match /collections/{collectionId} {
+      allow read: if isSignedIn() && resource.data.userId == request.auth.uid;
+      allow create: if isSignedIn() && request.resource.data.userId == request.auth.uid;
+      allow update, delete: if isSignedIn() && resource.data.userId == request.auth.uid;
+    }
+  }
+}

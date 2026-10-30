@@ -1,0 +1,71 @@
+# ==============================================================================
+# EchoNotes .gitignore
+# ==============================================================================
+
+# Operating System & IDE
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.class
+*.log
+*.pyc
+.atom/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+
+# IntelliJ / Android Studio / VS Code
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+
+# Flutter / Dart / Pub build artifacts
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+migrate_working_dir/
+
+# Android build outputs, keys, and signing
+*.apk
+*.aab
+*.jks
+*.keystore
+/android/app/debug
+/android/app/profile
+/android/app/release
+/android/.gradle/
+/android/captures/
+
+# iOS build outputs
+**/ios/DerivedData/
+**/ios/.symlinks/
+**/ios/Pods/
+**/ios/Podfile.lock
+
+# Symbolication & Obfuscation
+app.*.symbols
+app.*.map.json
+
+# Environment Variables & Private Secrets
+.env
+*.env
+.env.*
+!.env.example
+
+# Cloud Functions
+functions/node_modules/
+functions/dist/
+functions/lib/
